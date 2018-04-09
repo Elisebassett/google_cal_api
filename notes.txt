@@ -1,0 +1,27 @@
+Calendar event title
+(byebug) event.summary
+"neato"
+
+how to save hidden data to calendar event's local copy in memory
+(byebug) event.update!(extended_properties: {private: {foo: 'asdf'}})
+
+how to update google calendars with changes
+(byebug) service.update_event('primary', event.id, event)
+
+
+Homework:
+
+Draw pictures of how objects will be arranged. What classes will you need? Are there any active record models yet? 
+
+Draw pictures of the UI to muck around with private data stored on calendars.
+
+Base case: set priority in UI and update to google calendars, on reload the changed priority shows in app.
+
+Standardize priorities - what will they be called, what do they mean, how do they work?
+
+Figure out how to do the oauth thing in the UI. Let a user log in to your app, then oauth with google, store their token in your app and then use it to let them authenticate. Devise has oauth stuff built in. Use the same token to talk to the calendar.
+
+How might you display the google calendar in your app and overlay or change colors or something to show priorities?
+
+Think about how to shortcircuit knapsack by simplifying the way goals are organized. What rules of thumb might you employ to organize in a best-guess kind of way based on goals?
+
